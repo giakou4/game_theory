@@ -18,8 +18,8 @@ a22 = A(2,2);
 
 if (a11-a12)*(a22-a21)<0
     disp('Check for saddle point');
-    %return
-else %no saddle point
+    p1 = -inf; p2 = -inf; Value = -inf;
+else %no saddle point, we will try to find the equilibria of the game
     ac = (a11-a12)+(a22-a21);
     p1 = [(a22-a21)/ac (a11-a12)/ac];
     p2 = [(a22-a12)/ac (a11-a21)/ac];

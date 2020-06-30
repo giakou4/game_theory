@@ -10,7 +10,8 @@ function [p1,p2,V] = MinMax(A)
 % p1    : the optimal strategy of player 1
 % p2    : the optimal strategy of player 2
 % V     : the value of game A
-A
+ 
+%disp('Game Matrix is A ='); disp(A)
 %% Check if A(:) == 0
 if length(find(A==0))==size(A,1)*size(A,2) % A(:) = 0
     p1 = ones(size(A,1),1); p2 = ones(size(A,2),1); 
@@ -20,7 +21,8 @@ end
 [LowerValue,UpperValue] = CalculateValue(A);
 if LowerValue == UpperValue
     V = LowerValue; p1=zeros(size(A,1),1); p2 = zeros(size(A,2),1);
-    [row, col] = find(A==V); p1(row) = 1; p2(col) = 1;
+    [row, col] = find(A==V); p1(row(1)) = 1; p2(col(1)) = 1;
+    %disp('p1 = '); disp(p1); disp('p2 = '); disp(p2); disp('Value = '); disp(V); 
     return;
 end
 %% Check if P1 has 1 choice -> A is a row vector
@@ -29,6 +31,7 @@ if size(A,1) == 1
     pos = find(A==min(A(:)));
     p2 = zeros(size(A,2),1); p2(pos) = 1;
     V = min(A(:));
+    %disp('p1 = '); disp(p1); disp('p2 = '); disp(p2); disp('Value = '); disp(V);
     return;
 end
 %% Check if P2 has 1 choice -> A is a column vector
@@ -37,6 +40,7 @@ if size(A,2) == 1
     pos = find(A==max(A(:)));
     p1 = zeros(size(A,1),1); p1(pos) = 1;
     V = max(A(:)); 
+    %disp('p1 = '); disp(p1); disp('p2 = '); disp(p2); disp('Value = '); disp(V);
     return;
 end
 %% MinMax
@@ -58,6 +62,7 @@ v2=1/sum(x2);
 p1=v1*x1;
 p2=v2*x2;
 V=p1'*A*p2;
+%disp('p1 = '); disp(p1); disp('p2 = '); disp(p2); disp('Value = '); disp(V);
 end
 
 

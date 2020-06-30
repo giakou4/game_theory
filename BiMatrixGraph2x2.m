@@ -35,11 +35,11 @@ xlim([-0.2 1.2]);
 ylim([-0.2 1.2]);
 xlabel('p^{1}');
 ylabel('p^{2}');
-
+title('Best Response Functions of BiMatrix 2x2 Game: R^1(p^2) (red) and R^2(p^1) (blue)');
 %% check if M2 out of borders, else plot regularly
 if M2<0
     M2=0;
-    plot([M2 1],[1 1],'Color','blue','Linewidth',3)%hor right
+    plot([M2 1],[1 1],'Color','blue','Linewidth',3) %hor right
     hold on
 elseif M2>1
     M2=1;
@@ -69,7 +69,6 @@ else
     hold on
     line([0 1],[M1 M1],'Color','red','Linewidth',3)%hor    
 end
-
 
 end
 
