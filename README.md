@@ -10,7 +10,7 @@
 * Nash - Solves any BiMatrix game, given two matrices A1, A2.
 
 ### 5 Tree Games.
-* **BackInd** - performs backwards induction (see script for details).
+* **BackInd** - performs backwards induction for a tree game modeled in a specific way (see script for details).
 
 ### 6 Stochastic Games.
 * **StochGam** - solves a game modeled as stochastic (see script for details).
