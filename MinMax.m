@@ -10,7 +10,7 @@ function [p1,p2,V] = MinMax(A)
 % p1    : the optimal strategy of player 1
 % p2    : the optimal strategy of player 2
 % V     : the value of game A
- 
+%% Display Matrix A
 %disp('Game Matrix is A ='); disp(A)
 %% Check if A(:) == 0
 if length(find(A==0))==size(A,1)*size(A,2) % A(:) = 0
@@ -41,6 +41,11 @@ if size(A,2) == 1
     p1 = zeros(size(A,1),1); p1(pos) = 1;
     V = max(A(:)); 
     %disp('p1 = '); disp(p1); disp('p2 = '); disp(p2); disp('Value = '); disp(V);
+    return;
+end
+%% Solve 2x2 faster
+if (size(A,1) == 2 && size(A,2) ==2 )
+    [p1,p2,V]=Solve2x2(A);
     return;
 end
 %% MinMax

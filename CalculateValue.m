@@ -11,7 +11,7 @@ function [LowerValue,UpperValue] = CalculateValue(A)
 
 LowerValue = max(min(A'));
 UpperValue = min(max(A));
-fprintf('Val-(A) = %d \t Val+(A) = %d\n',LowerValue,UpperValue);
+%fprintf('Val-(A) = %d \t Val+(A) = %d\n',LowerValue,UpperValue);
 
 end
 

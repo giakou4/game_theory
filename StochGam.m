@@ -32,6 +32,7 @@ for t=T-1:-1:1
                 end
             end
         end
+        %AA
         [~,~,v] = MinMax(AA);
         V(t,k)=v;
     end
@@ -58,7 +59,7 @@ for i=1:size(V,2)
     else
         colorno = rand(1,3);
     end
-    plot(flipud(V(:,i)),'color',colorno);
+    plot(flipud(V(:,i)),'color',colorno,'Linewidth',3);
 end
 xlabel('T'); ylabel('Value'); grid on; legend('data',Legend,'Location', 'Best');
 title(['Finite Horizon Zero Sum 2 Player Stochastic Game (\gamma = ',num2str(g),')']);
