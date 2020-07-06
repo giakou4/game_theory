@@ -8,6 +8,7 @@ clear all; close all; clc;
 T=100;
 g1=0.9;
 g2=0.8;
+g3=1;
 QP(1).q=[1 -1;-3 3];
 QP(1).P(:,:,1)=[0.33 0.33; 0.33 0.33];
 QP(1).P(:,:,2)=[0.67 0.67; 0.67 0.67];
@@ -18,9 +19,10 @@ QP(2).P(:,:,2)=[0.33 0.33; 0.33 0.33];
 tic
 V=StochGam(QP,T,g1);
 V=StochGam(QP,T,g2);
+V=StochGam(QP,T,g3);
 clc;
 toc
-%{ %SOLVE FASTER
+%{ 
 tic
 V=StochGam2x2(QP,T,g1);
 V=StochGam2x2(QP,T,g2);

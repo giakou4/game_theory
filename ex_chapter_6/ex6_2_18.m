@@ -6,7 +6,8 @@
 clear all; close all; clc;
 %% Define the Game P,q,T,?
 T=30;
-g=1;
+g1=1;
+g2=0.8;
 QP(1).q=[1 -1;-3 3];
 QP(1).P(:,:,1)=[0.33 0.33; 0.33 0.33];
 QP(1).P(:,:,2)=[0.67 0.67; 0.67 0.67];
@@ -15,12 +16,7 @@ QP(2).P(:,:,1)=[0.67 0.67; 0.67 0.67];
 QP(2).P(:,:,2)=[0.33 0.33; 0.33 0.33];
 %% Solve the game
 tic
-V=StochGam(QP,T,g);
+V=StochGam(QP,T,g1);
+V=StochGam(QP,T,g2);
 clc;
 toc
-%{
-tic
-V=StochGam(QP,T,g);
-clc;
-toc
-%}
