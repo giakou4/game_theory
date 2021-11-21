@@ -14,4 +14,3 @@
 
 ### 6 Stochastic Games.
 * **StochGam** - solves a game modeled as stochastic (see script for details).
-
